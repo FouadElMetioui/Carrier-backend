@@ -1,15 +1,14 @@
 package io.fouad.carrerbackend.candidature;
 
+import io.fouad.carrerbackend.application.Application;
 import io.fouad.carrerbackend.fichier.Ficher;
-import io.fouad.carrerbackend.offre.Offre;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 @Data
 @Builder
@@ -30,13 +29,11 @@ public class Candidature {
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Addresse addresse;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "education_id", referencedColumnName = "id")
-    private Education education;
+    @OneToMany(mappedBy = "candidature", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Education> educations;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "experience_id", referencedColumnName = "id")
-    private Experience experience;
+    @OneToMany(mappedBy = "candidature", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Experience> experiences;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "infoProfessionnel_id", referencedColumnName = "id")
@@ -50,13 +47,9 @@ public class Candidature {
     @JoinColumn(name = "fichier_id", referencedColumnName = "id")
     private Ficher fichier;
 
-    @ManyToMany
-    @JoinTable(
-            name = "candidature_offre",
-            joinColumns = @JoinColumn(name = "candidature_id"),
-            inverseJoinColumns = @JoinColumn(name = "offre_id")
-    )
-    private Set<Offre> offres = new HashSet<>();
+    @OneToMany(mappedBy = "candidature", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Application> applications;
+
 
 
 

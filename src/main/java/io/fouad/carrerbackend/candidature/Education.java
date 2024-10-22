@@ -1,8 +1,7 @@
 package io.fouad.carrerbackend.candidature;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -27,4 +26,9 @@ public class Education {
     private LocalDate debutPeriode;
     private LocalDate finPeriode;
     private boolean actuellementEnPoste;
+
+    @ManyToOne
+    @JoinColumn(name = "candidature_id")
+    @JsonIgnore
+    private Candidature candidature;
 }
