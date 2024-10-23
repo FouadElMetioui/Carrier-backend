@@ -1,4 +1,4 @@
-package io.fouad.carrerbackend.configuration;
+package io.fouad.carrerbackend.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
