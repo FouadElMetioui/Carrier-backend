@@ -1,6 +1,7 @@
 package io.fouad.carrerbackend.offre;
 
 
+import io.fouad.carrerbackend.candidature.Candidature;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.RequiredArgsConstructor;
@@ -44,6 +45,14 @@ public class OffreController {
     @DeleteMapping("{id}")
     public ResponseEntity<Void> deleteOffreById(@PathVariable Long id) {
         return offreService.deleteOffre(id);
+    }
+
+
+    @Operation(summary = "Trouver une offre par ID",
+            description = "Récupère une offre à partir de son ID unique.")
+    @GetMapping("{id}/candidatures")
+    public ResponseEntity<List<Candidature>> getCandidaturesOffre(@PathVariable Long id) {;
+        return ResponseEntity.ok(offreService.getCandidaturesOffre(id));
     }
 
 }

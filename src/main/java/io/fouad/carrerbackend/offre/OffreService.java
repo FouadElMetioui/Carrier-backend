@@ -1,5 +1,8 @@
 package io.fouad.carrerbackend.offre;
 
+import io.fouad.carrerbackend.application.Application;
+import io.fouad.carrerbackend.application.ApplicationRepository;
+import io.fouad.carrerbackend.candidature.Candidature;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -11,14 +14,15 @@ import java.util.List;
 @RequiredArgsConstructor
 public class OffreService {
 
-    private final OffreRepository repository;
+    private final OffreRepository offreRepository;
+    private final ApplicationRepository applicationRepository;
 
     public Offre createOffre(OffreCreateDTO offreCreateDTO) {
-        return repository.save(OffreMapper.INSTANCE.offreCreateDtoToOffre(offreCreateDTO));
+        return offreRepository.save(OffreMapper.INSTANCE.offreCreateDtoToOffre(offreCreateDTO));
     }
 
     public List<OffreResponseDTO> getAllOffres() {
-        return repository
+        return offreRepository
                 .findAll()
                 .stream()
                 .map(OffreMapper.INSTANCE::offreToOffreResponseDTO)
@@ -26,7 +30,7 @@ public class OffreService {
     }
 
     public OffreResponseDTO getOffreById(Long id) {
-        return repository
+        return offreRepository
                 .findById(id)
                 .stream()
                 .map(OffreMapper.INSTANCE::offreToOffreResponseDTO)
@@ -35,16 +39,16 @@ public class OffreService {
     }
 
     public ResponseEntity<Void> deleteOffre(Long id) {
-        Offre offre = repository
+        Offre offre = offreRepository
                 .findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("offre not found"));
-        repository.delete(offre);
+        offreRepository.delete(offre);
         return ResponseEntity.noContent().build();
     }
 
     @Transactional
     public Offre updateOffre(Long id , OffreCreateDTO offreCreateDTO) {
-        Offre offre = repository
+        Offre offre = offreRepository
                 .findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("offre not found to update"));
 
@@ -57,5 +61,17 @@ public class OffreService {
         offre.setSavoirFaires(offreCreateDTO.savoirFaires());
 
         return offre;
+    }
+
+    public List<Candidature> getCandidaturesOffre(Long offreId) {
+       offreRepository.findById(offreId).orElseThrow(() -> new IllegalArgumentException("offre not found with id = " + offreId));
+       List<Application> applications = applicationRepository.findByOffreId(offreId);
+
+        return applications
+                .stream()
+                .map(Application::getCandidature)
+                .toList();
+
+
     }
 }
