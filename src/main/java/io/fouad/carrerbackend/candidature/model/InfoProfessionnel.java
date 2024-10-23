@@ -1,4 +1,4 @@
-package io.fouad.carrerbackend.candidature;
+package io.fouad.carrerbackend.candidature.model;
 
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;

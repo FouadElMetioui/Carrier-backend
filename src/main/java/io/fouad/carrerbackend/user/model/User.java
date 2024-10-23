@@ -1,6 +1,7 @@
-package io.fouad.carrerbackend.user;
+package io.fouad.carrerbackend.user.model;
 
-import io.fouad.carrerbackend.candidature.Candidature;
+import io.fouad.carrerbackend.candidature.model.Candidature;
+import io.fouad.carrerbackend.user.Gender;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

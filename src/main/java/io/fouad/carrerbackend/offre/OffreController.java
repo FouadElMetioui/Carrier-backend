@@ -1,7 +1,10 @@
 package io.fouad.carrerbackend.offre;
 
 
-import io.fouad.carrerbackend.candidature.Candidature;
+import io.fouad.carrerbackend.candidature.model.Candidature;
+import io.fouad.carrerbackend.offre.dto.OffreCreateDTO;
+import io.fouad.carrerbackend.offre.dto.OffreResponseDTO;
+import io.fouad.carrerbackend.offre.model.Offre;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.RequiredArgsConstructor;

@@ -1,5 +1,6 @@
-package io.fouad.carrerbackend.candidature;
+package io.fouad.carrerbackend.candidature.dto;
 
+import io.fouad.carrerbackend.candidature.model.*;
 import io.fouad.carrerbackend.fichier.Ficher;
 
 import java.util.List;

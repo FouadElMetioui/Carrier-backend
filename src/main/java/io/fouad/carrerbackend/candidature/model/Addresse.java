@@ -1,4 +1,4 @@
-package io.fouad.carrerbackend.candidature;
+package io.fouad.carrerbackend.candidature.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

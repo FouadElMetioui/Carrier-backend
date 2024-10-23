@@ -1,7 +1,8 @@
-package io.fouad.carrerbackend.offre;
+package io.fouad.carrerbackend.offre.model;
 
 import io.fouad.carrerbackend.application.Application;
-import io.fouad.carrerbackend.candidature.Addresse;
+import io.fouad.carrerbackend.candidature.model.Addresse;
+import io.fouad.carrerbackend.offre.WorkMode;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

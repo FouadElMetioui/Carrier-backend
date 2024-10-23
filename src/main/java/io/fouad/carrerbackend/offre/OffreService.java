@@ -2,7 +2,11 @@ package io.fouad.carrerbackend.offre;
 
 import io.fouad.carrerbackend.application.Application;
 import io.fouad.carrerbackend.application.ApplicationRepository;
-import io.fouad.carrerbackend.candidature.Candidature;
+import io.fouad.carrerbackend.candidature.model.Candidature;
+import io.fouad.carrerbackend.offre.dto.OffreCreateDTO;
+import io.fouad.carrerbackend.offre.dto.OffreMapper;
+import io.fouad.carrerbackend.offre.dto.OffreResponseDTO;
+import io.fouad.carrerbackend.offre.model.Offre;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

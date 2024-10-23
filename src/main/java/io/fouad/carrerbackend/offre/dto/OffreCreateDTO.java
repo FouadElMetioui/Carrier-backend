@@ -1,6 +1,8 @@
-package io.fouad.carrerbackend.offre;
+package io.fouad.carrerbackend.offre.dto;
 
-import io.fouad.carrerbackend.candidature.Addresse;
+import io.fouad.carrerbackend.candidature.model.Addresse;
+import io.fouad.carrerbackend.offre.WorkMode;
+
 import java.util.List;
 
 public record OffreCreateDTO(

@@ -1,9 +1,7 @@
 package io.fouad.carrerbackend.auth;
 
-import io.fouad.carrerbackend.user.UserCreateDTO;
-import io.fouad.carrerbackend.user.UserService;
+import io.fouad.carrerbackend.user.dto.UserCreateDTO;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

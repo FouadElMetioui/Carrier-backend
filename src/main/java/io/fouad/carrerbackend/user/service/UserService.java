@@ -1,6 +1,11 @@
-package io.fouad.carrerbackend.user;
+package io.fouad.carrerbackend.user.service;
 
 
+import io.fouad.carrerbackend.user.UserRepository;
+import io.fouad.carrerbackend.user.dto.UserCreateDTO;
+import io.fouad.carrerbackend.user.dto.UserMapper;
+import io.fouad.carrerbackend.user.dto.UserResponseDTO;
+import io.fouad.carrerbackend.user.model.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;

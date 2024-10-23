@@ -1,6 +1,9 @@
 package io.fouad.carrerbackend.user;
 
 
+import io.fouad.carrerbackend.user.dto.UserCreateDTO;
+import io.fouad.carrerbackend.user.dto.UserResponseDTO;
+import io.fouad.carrerbackend.user.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.RequiredArgsConstructor;

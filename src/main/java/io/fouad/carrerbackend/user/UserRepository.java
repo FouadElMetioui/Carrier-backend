@@ -1,5 +1,6 @@
 package io.fouad.carrerbackend.user;
 
+import io.fouad.carrerbackend.user.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

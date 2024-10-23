@@ -1,9 +1,9 @@
-package io.fouad.carrerbackend.candidature;
+package io.fouad.carrerbackend.candidature.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.fouad.carrerbackend.application.Application;
 import io.fouad.carrerbackend.fichier.Ficher;
-import io.fouad.carrerbackend.user.User;
+import io.fouad.carrerbackend.user.model.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

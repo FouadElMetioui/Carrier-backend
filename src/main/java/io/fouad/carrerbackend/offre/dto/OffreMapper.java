@@ -1,4 +1,5 @@
-package io.fouad.carrerbackend.offre;
+package io.fouad.carrerbackend.offre.dto;
+import io.fouad.carrerbackend.offre.model.Offre;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

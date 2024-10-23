@@ -1,5 +1,8 @@
 package io.fouad.carrerbackend.candidature;
 
+import io.fouad.carrerbackend.candidature.dto.CandidatureCreateDTO;
+import io.fouad.carrerbackend.candidature.dto.CandidatureResponseDTO;
+import io.fouad.carrerbackend.candidature.model.Candidature;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.RequiredArgsConstructor;

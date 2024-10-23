@@ -1,7 +1,8 @@
-package io.fouad.carrerbackend.candidature;
+package io.fouad.carrerbackend.candidature.dto;
 
 
 
+import io.fouad.carrerbackend.candidature.model.Candidature;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

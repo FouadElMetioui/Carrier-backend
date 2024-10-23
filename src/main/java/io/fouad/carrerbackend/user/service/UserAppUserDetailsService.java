@@ -1,5 +1,6 @@
-package io.fouad.carrerbackend.user;
+package io.fouad.carrerbackend.user.service;
 
+import io.fouad.carrerbackend.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
