@@ -1,6 +1,9 @@
 package io.fouad.carrerbackend.auth;
 
+import io.fouad.carrerbackend.user.model.User;
+
 public record AuthenticationResponse(
-        String token
+        String token,
+        User user
 ) {
 }

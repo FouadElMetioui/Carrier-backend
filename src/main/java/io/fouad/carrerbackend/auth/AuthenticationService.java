@@ -41,7 +41,7 @@ public class AuthenticationService {
         User user = (User) authentication.getPrincipal();
         UserCreateDTO userCreateDTO = UserMapper.INSTANCE.userToUserCreateDTO(user);
         String token = jwtUtil.issueToken(userCreateDTO.username(), userCreateDTO.roles());
-        AuthenticationResponse authenticationResponse = new AuthenticationResponse(token);
+        AuthenticationResponse authenticationResponse = new AuthenticationResponse(token, user);
         return ResponseEntity.ok()
                 .header(HttpHeaders.AUTHORIZATION, token)
                 .body(authenticationResponse);
